@@ -8,7 +8,7 @@ public class DBConnection {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/produitsdb?useSSL=false&serverTimezone=UTC";
     private static final String USER = "root";
-    private static final String PASSWORD = "modpassek"; // Your DB password here
+    private static final String PASSWORD = "yasmine123"; // Your DB password here
 
     public static Connection getConnection() {
         Connection connection = null;
