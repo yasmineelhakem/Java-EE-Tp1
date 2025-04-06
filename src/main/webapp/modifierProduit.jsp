@@ -34,8 +34,9 @@
 <h1>Modifier le Produit</h1>
 
 <c:if test="${not empty produit}">
-    <form action="${pageContext.request.contextPath}/ProduitController?action=modifier&id=${produit.id}" method="POST" enctype="multipart/form-data">
-        <div>
+    <form action="${pageContext.request.contextPath}/ProduitController?action=modifier" method="POST" >
+        <input type="hidden" name="action" value="modifier">
+        <input type="hidden" name="id" value="${produit.id}">        <div>
             <label for="nom">Nom:</label>
             <input type="text" id="nom" name="nom" value="${produit.nom}" required>
         </div>
@@ -48,7 +49,7 @@
             <input type="number" id="prix" name="prix" value="${produit.prix}" required step="0.01">
         </div>
         <div>
-            <label for="image">Image (optionnel):</label>
+            <label for="image">Image:</label>
             <input type="file" id="image" name="image">
         </div>
         <div>

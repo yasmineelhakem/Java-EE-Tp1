@@ -38,7 +38,18 @@ public class ProduitController extends HttpServlet {
             } else {
                 response.sendError(HttpServletResponse.SC_NOT_FOUND, "Produit non trouvé");
             }
-        } else {
+        } else if ("modifier".equals(action)) {
+            // Afficher le formulaire de modification
+            int id = Integer.parseInt(request.getParameter("id"));
+            Produit produit = gestionArticle.getProduitById(id);
+
+            if (produit != null) {
+                request.setAttribute("produit", produit);
+                request.getRequestDispatcher("/modifierProduit.jsp").forward(request, response);
+            } else {
+                response.sendError(HttpServletResponse.SC_NOT_FOUND, "Produit non trouvé");
+            }
+        }else {
             // Afficher la liste des produits
             List<Produit> produits = gestionArticle.listerProduits();
             request.setAttribute("produits", produits);

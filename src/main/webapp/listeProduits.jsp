@@ -62,7 +62,6 @@
                     </td>
                     <td>
                         <a href="${pageContext.request.contextPath}/ProduitController?action=modifier&id=${produit.id}">Modifier</a>
-                        |
                         <a href="${pageContext.request.contextPath}/ProduitController?action=supprimer&id=${produit.id}"
                            onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce produit ?');">
                             Supprimer
