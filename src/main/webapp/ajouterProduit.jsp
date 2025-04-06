@@ -33,7 +33,7 @@
 <body>
 <h1>Ajouter un Nouveau Produit</h1>
 
-<form action="${pageContext.request.contextPath}/ProduitController?action=ajouter" method="POST" enctype="multipart/form-data">
+<form action="${pageContext.request.contextPath}/ProduitController?action=ajouter" method="POST" >
     <div>
         <label for="nom">Nom:</label>
         <input type="text" id="nom" name="nom" required>
@@ -47,7 +47,7 @@
         <input type="number" id="prix" name="prix" required step="0.01">
     </div>
     <div>
-        <label for="image">Image (optionnel):</label>
+        <label for="image">Image :</label>
         <input type="file" id="image" name="image">
     </div>
     <div>

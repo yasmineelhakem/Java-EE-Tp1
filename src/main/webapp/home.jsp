@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>Welcome, ${sessionScope.user}!</h1>
-    <a href="listeProduits.jsp">Voir la Liste des Produits</a> <br>
+    <a href="ProduitController?action=liste">Voir la Liste des Produits</a> <br>
     <a href="ajouterProduit.jsp">Ajouter un Nouveau Produit</a> <br>
     <a href="logout">Logout</a>
 </body>

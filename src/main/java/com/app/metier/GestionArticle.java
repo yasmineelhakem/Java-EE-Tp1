@@ -1,6 +1,8 @@
 package com.app.metier;
 
 import com.app.dao.IGestionArticleDAO;
+import com.app.dao.IGestionArticleDAO;
+
 import com.app.metier.Produit;
 import java.util.List;
 

@@ -42,7 +42,7 @@ public class ProduitController extends HttpServlet {
             // Afficher la liste des produits
             List<Produit> produits = gestionArticle.listerProduits();
             request.setAttribute("produits", produits);
-            request.getRequestDispatcher("/listerProduits.jsp").forward(request, response);
+            request.getRequestDispatcher("/listeProduits.jsp").forward(request, response);
         }
     }
 
@@ -80,7 +80,7 @@ public class ProduitController extends HttpServlet {
                 gestionArticle.ajoutProduit(produit);
 
                 // Redirection vers la liste des produits
-                response.sendRedirect("ProduitServlet?action=liste");
+                response.sendRedirect("ProduitController?action=liste");
 
             } else if ("modifier".equals(action)) {
                 // Modifier un produit
@@ -111,7 +111,7 @@ public class ProduitController extends HttpServlet {
                 gestionArticle.modifierProduit(produit);
 
                 // Redirection vers les détails du produit
-                response.sendRedirect("ProduitServlet?action=details&id=" + id);
+                response.sendRedirect("ProduitController?action=details&id=" + id);
             }
 
         } catch (Exception e) {

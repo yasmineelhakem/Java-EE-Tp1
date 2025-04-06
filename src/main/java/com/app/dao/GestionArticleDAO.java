@@ -3,7 +3,6 @@ package com.app.dao;
 import java.sql.*;
 import java.util.*;
 
-import com.app.dao.IGestionArticleDAO;
 import com.app.metier.Produit;
 
 public class GestionArticleDAO implements IGestionArticleDAO{
@@ -24,7 +23,7 @@ public class GestionArticleDAO implements IGestionArticleDAO{
             statement.setString(4, p.getImage());
 
             statement.executeUpdate();
-            System.out.println("Produit ajouté avec succès !");
+            System.out.println("Produit ajouté ");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -33,9 +32,10 @@ public class GestionArticleDAO implements IGestionArticleDAO{
     @Override
     public List<Produit> listerProduits() {
         List<Produit> produits = new ArrayList<>();
-        try (Connection conn = DBConnection.getConnection();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT * FROM produits")) {
+        String sql = "SELECT * FROM produits";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
 
             while (rs.next()) {
                 Produit p = new Produit();
@@ -90,7 +90,7 @@ public class GestionArticleDAO implements IGestionArticleDAO{
             stmt.setInt(5, p.getId());
 
             stmt.executeUpdate();
-            System.out.println("Produit modifié avec succès !");
+            System.out.println("Produit modifié ");
         } catch (SQLException e) {
             e.printStackTrace();
         }
