@@ -1,0 +1,3 @@
+database :
+  url : url-to-database
+  user-name : database-username
